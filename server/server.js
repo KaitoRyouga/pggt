@@ -1,8 +1,8 @@
 import config from '../config/config'
 import app from './express'
 import mongoose from 'mongoose'
-
-// Connection URL
+ 
+// Connection URL connect
 mongoose.Promise = global.Promise
 mongoose.connect(config.mongoUri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 mongoose.connection.on('error', () => {
