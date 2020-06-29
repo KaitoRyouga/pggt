@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Icon from '@material-ui/core/Icon';
-import logo from '../../assets/images/logo-google.png'
+// import logo from '../../assets/images/logo-google.png'
 import Pagination from '@material-ui/lab/Pagination';
 import SearchIcon from '@material-ui/icons/Search';
 import ImageIcon from '@material-ui/icons/Image';
@@ -178,9 +178,9 @@ export default function AlignItemsList() {
     <div>
     <Grid className={classes.appbarTop} container direction="row" alignItems="center">
         <Grid item xs={1}>
-        <Link href="https://www.google.com/">
+        {/* <Link href="https://www.google.com/">
             <img src={logo}/>
-          </Link>
+          </Link> */}
         </Grid>
         
         <Grid item xs={11}>
