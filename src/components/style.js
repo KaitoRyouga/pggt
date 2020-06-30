@@ -117,7 +117,30 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     appbarTop: {
-      padding: '1em'
+      padding: '1em',
+      [theme.breakpoints.down('xs')]: {
+        // width: '100%',
+        display: 'none'
+      },
+      [theme.breakpoints.up('sm')]: {
+          // display: 'none'
+      },
+      [theme.breakpoints.up('lg')]: {
+        // display: 'none'
+      },
+    },
+    appbarTopMobileBreakpoint: {
+      padding: '1em',
+      [theme.breakpoints.down('xs')]: {
+        // width: '100%',
+        // display: 'none'
+      },
+      [theme.breakpoints.up('sm')]: {
+          display: 'none'
+      },
+      [theme.breakpoints.up('lg')]: {
+        display: 'none'
+      },
     },
     rootAppBar: {
         borderRadius: '1em',
@@ -128,27 +151,40 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
         },
         [theme.breakpoints.up('lg')]: {
-            width: '70%',
+            // width: '70%',
         },
     },
     grow: {
       flexGrow: 1,
     },
     rootContainer: {
-      paddingLeft: '10%'
+      // paddingLeft: '10%',
+      paddingRight: '-10em',
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: '3%',
+        paddingRight: '0'
+      },
+      [theme.breakpoints.up('md')]: {
+        paddingLeft: '3%',
+      },
+      [theme.breakpoints.up('lg')]: {
+        paddingLeft: '10%',
+      },
     },
     searchResult: {
       paddingBottom: '2em'
     },
     logo: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             display: 'none'
         },
-        [theme.breakpoints.up('md')]: {
-          marginRight: '0.3em'
+        [theme.breakpoints.up('sm')]: {
+          // marginRight: '0.3em'
+          display: 'none'
         },
         [theme.breakpoints.up('lg')]: {
-            marginRight: '0.3em'
+          display: 'inline',
+          marginRight: '0.3em'
         },
     },
     buttonMobile: {
@@ -182,10 +218,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'none'
       },
       [theme.breakpoints.up('sm')]: {
-        // display: 'none'
+        display: 'inline'
       },
       [theme.breakpoints.up('lg')]: {
-        // display: 'none'
+        display: 'inline'
       }, 
     },
     avatarTopMobile: {
@@ -217,6 +253,12 @@ const useStyles = makeStyles((theme) => ({
     toolsEvent: {
       textAlign: "left", 
       padding: 0
+    },
+    avatarTopMbile: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      marginRight: '0.1em'
     }
   
   }));
