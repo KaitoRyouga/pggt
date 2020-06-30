@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import InputBase from '@material-ui/core/InputBase';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import logo from '../../assets/images/logo-google.png'
+import logo from '../../assets/images/logogoogle.png'
 import SearchIcon from '@material-ui/icons/Search';
 import useStyles from '../style'
 import Avatar from '@material-ui/core/Avatar';
@@ -63,7 +63,7 @@ function SearchWithWidth(props) {
             
             {/* avatar */}
             <Grid item xs={1} className={classes.avatarTop}>
-                <Avatar alt="KR" src="../../assets/images/logo-google.png" />
+                <Avatar alt="KR" src="../../assets/images/logogoogle.png" />
             </Grid>
         </Grid>
 

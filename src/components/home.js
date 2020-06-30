@@ -144,12 +144,12 @@ export default function AlignItemsList() {
         {/* brand */}
         <Grid item xs={4}>
           <Link href="https://www.google.com/">
-            <img src="../assets/images/logo-google.png"/>
+            <img src="../assets/images/logogoogle.png"/>
             </Link>
         </Grid>
         {/* avatar */}
         <Grid item xs={3} className={classes.avatarTopMbile}>
-            <Avatar onClick={handleClick} alt="KR" src="../assets/images/logo-google.png" />
+            <Avatar onClick={handleClick} alt="KR" src="../assets/images/logogoogle.png" />
         </Grid>
       </Grid>
       {/* end */}
