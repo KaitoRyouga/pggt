@@ -68,9 +68,9 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <Grid item xs={8} className={classes.searchRelated}>
+        <Grid item xs={12} className={classes.searchRelated}>
           <h4>Searches related to reactjs</h4>
-            <Grid container direction="row" spacing={10}>
+            <Grid container direction="row">
               <Grid item xs={6}>
                 <p>
                   <SearchIcon /><Link href="#">reactjs tutorial</Link>

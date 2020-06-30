@@ -27,6 +27,7 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Search from './mobile/search'
 import Content from './mobile/content'
+import logo from '../assets/images/logogoogle.png'
 
 
 export default function AlignItemsList() {
@@ -144,12 +145,12 @@ export default function AlignItemsList() {
         {/* brand */}
         <Grid item xs={4}>
           <Link href="https://www.google.com/">
-            <img src="../assets/images/logogoogle.png"/>
+            <img src={logo}/>
             </Link>
         </Grid>
         {/* avatar */}
         <Grid item xs={3} className={classes.avatarTopMbile}>
-            <Avatar onClick={handleClick} alt="KR" src="../assets/images/logogoogle.png" />
+            <Avatar onClick={handleClick} alt="KR"/>
         </Grid>
       </Grid>
       {/* end */}
