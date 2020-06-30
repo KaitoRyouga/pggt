@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     },
     searchTitle: {
         color : '#1A0DAB',
-        fontSize: '21px',
+        fontSize: '20px',
     
     },
     address: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     searchContent: {
         color: '#535156',
-        fontSize: '18px'
+        fontSize: '14px'
     },
     searchRelated: {
         fontSize: '18px',
@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center", 
         alignItems: "center",
         padding: '1em'
+    },
+    paginationText: {
+      marginTop: '0.8em'
     },
     result: {
         color: '#a19999',
@@ -67,19 +70,26 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
+      marginBottom: '1em'
     },
     inputRoot: {
-      color: 'inherit'
+      color: 'inherit',
+      width: '100%',
+      height: '100%',
+      marginBottom: '0.7em',
+      [theme.breakpoints.up('xs')]: {
+        // marginBottom: '0.1em',
+      },
     },
     inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
+      // padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
+      // paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      // transition: theme.transitions.create('width'),
+      // width: '100%',
+      // [theme.breakpoints.up('md')]: {
+      //   width: '15ch',
+      // },
     },
     toolbarLink: {
       color: '#68696b',
@@ -117,7 +127,8 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     appbarTop: {
-      padding: '1em',
+      paddingTop: '1em',
+      paddingLeft: '1em',
       [theme.breakpoints.down('xs')]: {
         // width: '100%',
         display: 'none'
@@ -143,12 +154,21 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     rootAppBar: {
-        borderRadius: '1em',
+        borderRadius: '0.7em',
+        width: '100%',
+        height: '3em',
+        marginLeft: '0.5em',
+        [theme.breakpoints.up('xs')]: {
+          width: '100%',
+          height: '1em',
+      },
         [theme.breakpoints.down('sm')]: {
             width: '100%',
+            height: '3em',
         },
         [theme.breakpoints.up('md')]: {
             width: '100%',
+            height: '3em',
         },
         [theme.breakpoints.up('lg')]: {
             // width: '70%',
@@ -160,9 +180,15 @@ const useStyles = makeStyles((theme) => ({
     rootContainer: {
       // paddingLeft: '10%',
       paddingRight: '-10em',
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('xs')]: {
         paddingLeft: '3%',
-        paddingRight: '0'
+        paddingRight: '0',
+        marginTop: '-1.5em'
+      },
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: '6%',
+        paddingRight: '0',
+        // marginTop: '1em'
       },
       [theme.breakpoints.up('md')]: {
         paddingLeft: '3%',
@@ -172,7 +198,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     searchResult: {
-      paddingBottom: '2em'
+      paddingBottom: '1.5em',
     },
     logo: {
         [theme.breakpoints.down('xs')]: {
@@ -184,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.up('lg')]: {
           display: 'inline',
-          marginRight: '0.3em'
+          // marginRight: '0.3em'
         },
     },
     buttonMobile: {
@@ -213,15 +239,14 @@ const useStyles = makeStyles((theme) => ({
     avatarTop: {
       display:  'flex', 
       justifyContent: 'flex-end',
-      marginLeft: '4em',
       [theme.breakpoints.down('xs')]: {
         display: 'none'
       },
       [theme.breakpoints.up('sm')]: {
-        display: 'inline'
+        // display: 'inline'
       },
       [theme.breakpoints.up('lg')]: {
-        display: 'inline'
+        // display: 'inline'
       }, 
     },
     avatarTopMobile: {

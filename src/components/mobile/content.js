@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import SearchIcon from '@material-ui/icons/Search';
 import useStyles from '../style'
+import Divider from '@material-ui/core/Divider';
 
 const components = {
   sm: 10,
@@ -38,9 +39,9 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <div className="container-fluid">
-          <hr />
-        </div>
+        <Grid item xs={8}>
+          <Divider light />
+        </Grid>
         <Grid item xs={widthMobile} className={classes.searchResult}>
           <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
           <h1 className={classes.searchTitle}>
@@ -56,9 +57,9 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <div className="container-fluid">
-          <hr />
-        </div>
+        <Grid item xs={8}>
+          <Divider light />
+        </Grid>
         <Grid item xs={widthMobile} className={classes.searchResult}>
           <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
           <h1 className={classes.searchTitle}>
@@ -74,9 +75,9 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <div className="container-fluid">
-          <hr />
-        </div>
+        <Grid item xs={8}>
+          <Divider light />
+        </Grid>
         <Grid item xs={12} className={classes.searchRelated}>
           <h4>Searches related to reactjs</h4>
             <Grid container direction="row">

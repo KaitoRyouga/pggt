@@ -183,9 +183,9 @@ export default function AlignItemsList() {
             <MenuItem onClick={handleClose}>Logout</MenuItem>
           </Menu>
         </Toolbar>
-        <div className="container-fluid">
-          <hr />
-        </div>
+        <Grid item xs={8}>
+          <Divider light />
+        </Grid>
         {/* tool */}
         {hiddenTools &&
           (<Grid>
@@ -206,14 +206,14 @@ export default function AlignItemsList() {
       {/* content */}
         <Content></Content>
         {/* pagination */}
-      <div className={classes.pagination }>
-          <Typography>Page: {page}</Typography>
+      <div className={classes.pagination}>
+          <Typography className={classes.paginationText}>Page: {page}</Typography>
           <Pagination color="primary" count={10} page={page} onChange={handleChange} />
       </div>
       <Grid container className={classes.box}>
-          <Grid item xs={12} className={classes.margin}><Link href="#">Việt Nam</Link></Grid>
+          {/* <Grid item xs={12} className={classes.margin}><Link href="#">Việt Nam</Link></Grid> */}
           <Grid item xs={6} className={classes.margin}>
-            <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
+            <Grid container direction="row" justify="flex-start" alignItems="center">
               <Grid item md={2} >
                 <Link href="#">Advertising</Link>
               </Grid>
@@ -223,13 +223,10 @@ export default function AlignItemsList() {
               <Grid item md={2} >
                 <Link href="#">About</Link>
               </Grid>
-              <Grid item md={2} >
-                <Link href="#">How Search Work</Link>
-              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={6}>
-            <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
+            <Grid container direction="row" justify="flex-end" alignItems="center">
               <Grid item md={2}>
                 <Link href="#">Privacy</Link>
               </Grid>

@@ -13,9 +13,9 @@ import useStyles from '../style'
 import Avatar from '@material-ui/core/Avatar';
 
 const components = {
-  sm: 6,
+  sm: 8,
   md: 8,
-  lg: 8,
+  lg: 7,
   xl: 10,
   xs: 10,
 };
@@ -28,7 +28,7 @@ function SearchWithWidth(props) {
   return (
       <div>
         {/* desktop state: appbar top ( brand + search + avatar ) */}
-        <Grid className={classes.appbarTop} container direction="row" alignItems="center">
+        <Grid className={classes.appbarTop} container direction="row" justify="flex-start" alignItems="center">
             {/* brand */}
             <Grid item xs={1} className={classes.logo}>
             <Link href="https://www.google.com/">
@@ -62,8 +62,10 @@ function SearchWithWidth(props) {
             </Grid>
             
             {/* avatar */}
-            <Grid item xs={1} className={classes.avatarTop}>
-                <Avatar alt="KR" src="../../assets/images/logogoogle.png" />
+            <Grid item xs={4} className={classes.avatarTop}>
+                {/* <Grid item md="2" > */}
+                    <Avatar alt="KR" src="../../assets/images/logogoogle.png" />
+                {/* </Grid> */}
             </Grid>
         </Grid>
 
