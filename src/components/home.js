@@ -5,7 +5,6 @@ import InputBase from '@material-ui/core/InputBase';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import logo from '../assets/images/logo-google.png'
 import Pagination from '@material-ui/lab/Pagination';
 import SearchIcon from '@material-ui/icons/Search';
 import ImageIcon from '@material-ui/icons/Image';
@@ -145,7 +144,7 @@ export default function AlignItemsList() {
         {/* brand */}
         <Grid item xs={4}>
           <Link href="https://www.google.com/">
-            <img src={logo}/>
+            <img src="../assets/images/logo-google.png"/>
             </Link>
         </Grid>
         {/* avatar */}
