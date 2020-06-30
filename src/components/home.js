@@ -210,6 +210,38 @@ export default function AlignItemsList() {
           <Typography>Page: {page}</Typography>
           <Pagination color="primary" count={10} page={page} onChange={handleChange} />
       </div>
+      <Grid container className={classes.box}>
+          <Grid item xs={12} className={classes.margin}><Link href="#">Việt Nam</Link></Grid>
+          <Grid item xs={6} className={classes.margin}>
+            <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
+              <Grid item md={2} >
+                <Link href="#">Advertising</Link>
+              </Grid>
+              <Grid item md={2} >
+                <Link href="#">Bussiness</Link>
+              </Grid>
+              <Grid item md={2} >
+                <Link href="#">About</Link>
+              </Grid>
+              <Grid item md={2} >
+                <Link href="#">How Search Work</Link>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={6}>
+            <Grid container spacing={1} direction="row" justify="flex-end" alignItems="center">
+              <Grid item md={2}>
+                <Link href="#">Privacy</Link>
+              </Grid>
+              <Grid item md={2}>
+                <Link href="#">Terms</Link>
+              </Grid>
+              <Grid item md={2}>
+                <Link href="#">Settings</Link>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
     </div>
   );
 }

@@ -259,7 +259,25 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'flex-end',
       alignItems: 'center',
       marginRight: '0.1em'
-    }
+    },
+    
+    box: {
+      marginRight: '-1',
+      backgroundColor: "#F2F2F2",
+      paddingTop: 10,
+      paddingBottom: 15,
+      paddingLeft: 15,
+      color: "#6F6F6F",
+      borderBottom: "1px solid #E4E4E4",
+      borderTop: "1px solid #E4E4E4"
+  },
+  border: {
+      borderBottom: "1px solid #E4E4E4"
+  },
+  margin: {
+      marginTop: 5,
+      marginBottom: 5
+  }
   
   }));
 
