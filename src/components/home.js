@@ -26,6 +26,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
+import Search from './mobile/search'
+import Content from './mobile/content'
 
 
 export default function AlignItemsList() {
@@ -147,50 +149,15 @@ export default function AlignItemsList() {
             </Link>
         </Grid>
         {/* avatar */}
-        <Grid item xs={4} className={classes.avatarTopMbile}>
+        <Grid item xs={3} className={classes.avatarTopMbile}>
             <Avatar onClick={handleClick} alt="KR" src="../assets/images/logo-google.png" />
         </Grid>
       </Grid>
       {/* end */}
 
       {/* desktop state: appbar top ( brand + search + avatar ) */}
-      <Grid className={classes.appbarTop} container direction="row" alignItems="center">
-        {/* brand */}
-        <Grid item xs={1} className={classes.logo}>
-          <Link href="https://www.google.com/">
-            <img src={logo}/>
-            </Link>
-        </Grid>
-        {/* search */}
-        <Grid item xs={9}>
-          <AppBar color="transparent" position="static" classes={{root: classes.rootAppBar}}>
-            <Toolbar>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-              <div className={classes.grow} />
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-            </Toolbar>
-          </AppBar>
-        </Grid>
-        {/* avatar */}
-        <Grid item xs={1} className={classes.avatarTop}>
-            <Avatar onClick={handleClick} alt="KR" src="../assets/images/logo-google.png" />
-        </Grid>
-      </Grid>
+
+      <Search/>
       
       {/* tools events */}
       <Grid container className={classes.rootContainer}>
@@ -237,86 +204,7 @@ export default function AlignItemsList() {
         }
       </Grid>
       {/* content */}
-      <Grid container direction="column" className={classes.rootContainer}>
-        <Grid item xs={8} className={classes.searchResult}>
-          <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
-          <h1 className={classes.searchTitle}>
-            <Link href="#"
-              >React – A JavaScript library for building user interfaces</Link>
-          </h1>
-          <p className={classes.searchContent}>
-            React makes it painless to create interactive UIs. Design simple
-            views for each state in your application, and React will efficiently
-            update and render just the right ...
-          </p>
-          <span className={classes.visited}
-            >You've visited this page 2 times. Last visit: 6/28/20</span
-          >
-        </Grid>
-        <Grid item xs={8} className={classes.searchResult}>
-          <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
-          <h1 className={classes.searchTitle}>
-            <Link href="#"
-              >React – A JavaScript library for building user interfaces</Link>
-          </h1>
-          <p className={classes.searchContent}>
-            React makes it painless to create interactive UIs. Design simple
-            views for each state in your application, and React will efficiently
-            update and render just the right ...
-          </p>
-          <span className={classes.visited}
-            >You've visited this page 2 times. Last visit: 6/28/20</span
-          >
-        </Grid>
-        <Grid item xs={8} className={classes.searchResult}>
-          <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
-          <h1 className={classes.searchTitle}>
-            <Link href="#"
-              >React – A JavaScript library for building user interfaces</Link>
-          </h1>
-          <p className={classes.searchContent}>
-            React makes it painless to create interactive UIs. Design simple
-            views for each state in your application, and React will efficiently
-            update and render just the right ...
-          </p>
-          <span className={classes.visited}
-            >You've visited this page 2 times. Last visit: 6/28/20</span
-          >
-        </Grid>
-        <Grid item xs={8} className={classes.searchRelated}>
-          <h4>Searches related to reactjs</h4>
-            <Grid container direction="row" spacing={10}>
-              <Grid item xs={6}>
-                <p>
-                  <SearchIcon /><Link href="#">reactjs tutorial</Link>
-                </p>
-                <p>
-                  <SearchIcon /><Link href="#">react example</Link>
-                </p>
-                <p>
-                  <SearchIcon /><Link href="#">reactjs example for beginners</Link>
-                </p>
-                <p>
-                <SearchIcon /><Link href="#">install reactjs</Link>
-                </p>
-              </Grid>
-              <Grid item xs={6}>
-                <p>
-                  <SearchIcon /><Link href="#">reactjs tutorial</Link>
-                </p>
-                <p>
-                  <SearchIcon /><Link href="#">react example</Link>
-                </p>
-                <p>
-                  <SearchIcon /><Link href="#">reactjs example for beginners</Link>
-                </p>
-                <p>
-                  <SearchIcon /><Link href="#">install reactjs</Link>
-                </p>
-              </Grid>
-            </Grid>
-        </Grid>
-      </Grid>
+        <Content></Content>
         {/* pagination */}
       <div className={classes.pagination }>
           <Typography>Page: {page}</Typography>
