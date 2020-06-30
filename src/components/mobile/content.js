@@ -21,7 +21,7 @@ function ContentWithWidth(props) {
 
   return (
       <div>
-        {/* content */}
+        {/* content gg */}
         <Grid container direction="column" className={classes.rootContainer}>
         <Grid item xs={widthMobile} className={classes.searchResult}>
           <Link className={classes.address} href="https://reactjs.org/">reactjs.org</Link>
