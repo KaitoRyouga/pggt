@@ -93,7 +93,6 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbarLink: {
       color: '#68696b',
-      padding:'0 0.9rem 1.1rem 0.9rem',
       '&:focus': {
           color: '#1AA2F1',
           border: '3px solid #1A73E8',
@@ -104,7 +103,20 @@ const useStyles = makeStyles((theme) => ({
       },
       '&:hover': {
           textDecoration: 'none',
-        }
+      },
+      [theme.breakpoints.down('xs')]: {
+        padding:'0 0 1.1rem 0',
+        fontSize: '13px'
+      },
+      [theme.breakpoints.down('sm')]: {
+        padding:'0 0.9rem 1.1rem 0',
+      },
+      [theme.breakpoints.up('md')]: {
+        padding:'0 0.9rem 1.1rem 0',
+      },
+      [theme.breakpoints.up('lg')]: {
+        padding:'0 0.9rem 1.1rem 0',
+      },
     },
     tools: {
       padding:'0 0.9rem 1.1rem 0.9rem',
@@ -129,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
     appbarTop: {
       paddingTop: '1em',
       paddingLeft: '1em',
+      // marginBottom: '1em',
       [theme.breakpoints.down('xs')]: {
         // width: '100%',
         display: 'none'
@@ -142,9 +155,11 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarTopMobileBreakpoint: {
       padding: '1em',
+      marginBottom: '200em',
       [theme.breakpoints.down('xs')]: {
         // width: '100%',
         // display: 'none'
+        marginBottom: '1em'
       },
       [theme.breakpoints.up('sm')]: {
           display: 'none'
@@ -160,8 +175,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '0.5em',
         [theme.breakpoints.up('xs')]: {
           width: '100%',
-          height: '1em',
-      },
+          height: '2em',
+        },
         [theme.breakpoints.down('sm')]: {
             width: '100%',
             height: '3em',
@@ -174,6 +189,12 @@ const useStyles = makeStyles((theme) => ({
             // width: '70%',
         },
     },
+    rootAppBarMobile: {
+      borderRadius: '0.7em',
+      width: '100%',
+      height: '2.5em',
+      marginLeft: '0.5em',
+  },
     grow: {
       flexGrow: 1,
     },
@@ -197,8 +218,31 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '10%',
       },
     },
+    toolsAll: {
+      // textAlign: 'left',
+      // paddingLeft: '10%',
+      // paddingRight: '-10em',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      [theme.breakpoints.up('xs')]: {
+        paddingLeft: '-20%',
+      },
+      [theme.breakpoints.down('sm')]: {
+        marginLeft: '-7.5%',
+        paddingLeft: '1.5%',
+        marginBottom: '3%',
+        // marginTop: '1em'
+      },
+      [theme.breakpoints.up('md')]: {
+        marginLeft: '-3%',
+      },
+      [theme.breakpoints.up('lg')]: {
+        marginLeft: '-3%',
+      },
+    },
     searchResult: {
       paddingBottom: '1.5em',
+      // marginTop: '2em',
     },
     logo: {
         [theme.breakpoints.down('xs')]: {
@@ -226,6 +270,8 @@ const useStyles = makeStyles((theme) => ({
         },      
     },
     toolbarDestop: {
+      marginTop: '2em',
+      marginBottom: '2em',
       [theme.breakpoints.down('xs')]: {
         display: 'none'
       },
@@ -302,6 +348,17 @@ const useStyles = makeStyles((theme) => ({
   margin: {
       marginTop: 5,
       marginBottom: 5
+  },
+  fixMobile: {
+    [theme.breakpoints.down('xs')]: {
+      // display: 'none'
+    },
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    },
+    [theme.breakpoints.up('lg')]: {
+      display: 'none'
+    },
   }
   
   }));

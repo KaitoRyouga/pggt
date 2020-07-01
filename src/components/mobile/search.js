@@ -69,6 +69,42 @@ const StyledMenu = withStyles({
 
 function SearchWithWidth(props) {
 
+    const { width } = props;
+    const classes = useStyles();
+    const widthMobile = components[width] || 10;
+
+    // set hidden event
+    const [eventAll, seteventAll] = React.useState(false);
+    const [eventImage, seteventImage] = React.useState(false);
+    const [eventVideo, seteventVideo] = React.useState(false);
+    const [eventMore, seteventMore] = React.useState(false);
+    const [eventSetting, seteventSetting] = React.useState(false);
+    const [openState, setopenState] = React.useState(false);
+
+    const handleClickOpenDrawer = () => {
+        setopenState(!openState);
+    };
+
+    const handleClickeventAll = (event) => {
+        seteventAll(!eventAll);
+    };
+
+    const handleClickeventImage = (event) => {
+        seteventImage(!eventImage);
+    };
+
+    const handleClickeventVideo = (event) => {
+        seteventVideo(!eventVideo);
+    };
+
+    const handleClickeventSetting = (event) => {
+        seteventSetting(!eventSetting);
+    };
+
+    const handleClickeventMore = (event) => {
+        seteventMore(!eventMore);
+    };
+
     // set open/off events
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -81,6 +117,16 @@ function SearchWithWidth(props) {
         setAnchorEl(null);
     };
 
+    const [anchorElMobile, setAnchorElMobile] = React.useState(null);
+
+    const handleClickMobile = (event) => {
+        setAnchorElMobile(event.currentTarget);
+    };
+
+    const handleCloseMobile = () => {
+        setAnchorElMobile(null);
+    };
+
     // end
 
     // set open/off tools
@@ -88,23 +134,14 @@ function SearchWithWidth(props) {
     const [hiddenTools, setHiddenTools] = React.useState(false);
 
     const handleClickHiddenTools = (event) => {
+        
+        if(width == 'xs'){
+            handleClickOpenDrawer();
+        }
         setHiddenTools(!hiddenTools);
     };
 
     // end
-
-    // mobile state: config drawer
-    const [state, setState] = React.useState({
-        left: false,
-    });
-
-    const toggleDrawer = (anchor, open) => (event) => {
-        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
-
-        setState({ ...state, [anchor]: open });
-    };
 
     // list item drawer
 
@@ -114,55 +151,166 @@ function SearchWithWidth(props) {
             [classes.fullList]: anchor === 'top' || anchor === 'bottom',
             })}
             role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
+            // onClick={toggleDrawer(anchor, false)}
+            onKeyDown={handleClickOpenDrawer}
         >
             <List>
-            {['Tất cả', 'Hình ảnh', 'Video', 'Thêm'].map((text, index) => (
-                <ListItem button key={text} onClick={handleClick}>
-                {index == 0 && <ListItemIcon><SearchIcon /></ListItemIcon>}
-                {index == 1 && 
-                    (<ListItemIcon><ImageIcon/></ListItemIcon>)
-                }
-                {index == 2 && <ListItemIcon><VideoLibraryIcon/></ListItemIcon>}
-                {index == 3 && <ListItemIcon><MoreVertIcon/></ListItemIcon>}
-                <ListItemText primary={text} />
+                <ListItem onClick={handleClickeventAll} button key='Tất cả'>
+                    <ListItemIcon><SearchIcon /></ListItemIcon>
+                    <ListItemText primary='Tất cả' />
                 </ListItem>
-            ))}
+                <Divider />
+                {
+                    eventAll && (
+                        <div>
+                            <ListItem button key='Options 1'>
+                                <ListItemIcon></ListItemIcon>
+                            <ListItemText primary='Options 1' />
+                            </ListItem>
+                            <ListItem button key='Options 2'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 2' />
+                            </ListItem>
+                            <ListItem button key='Options 3'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 3' />
+                            </ListItem>
+                            <Divider />
+                            <Divider />
+                        </div>
+                    )
+                }
+
+                <ListItem onClick={handleClickeventImage} button key='Hình ảnh'>
+                    <ListItemIcon><ImageIcon/></ListItemIcon>
+                    <ListItemText primary='Hình ảnh' />
+                </ListItem>
+
+                {
+                    eventImage && (
+                        <div>
+                            <ListItem button key='Options 1'>
+                                <ListItemIcon></ListItemIcon>
+                            <ListItemText primary='Options 1' />
+                            </ListItem>
+                            <ListItem button key='Options 2'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 2' />
+                            </ListItem>
+                            <ListItem button key='Options 3'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 3' />
+                            </ListItem>
+                            <Divider />
+                            <Divider />
+                        </div>
+                    )
+                }
+
+                <ListItem onClick={handleClickeventVideo} button key='Video'>
+                <ListItemIcon><VideoLibraryIcon/></ListItemIcon>
+                    <ListItemText primary='Video' />
+                </ListItem>
+
+                {
+                    eventVideo && (
+                        <div>
+                            <ListItem button key='Options 1'>
+                                <ListItemIcon></ListItemIcon>
+                            <ListItemText primary='Options 1' />
+                            </ListItem>
+                            <ListItem button key='Options 2'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 2' />
+                            </ListItem>
+                            <ListItem button key='Options 3'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 3' />
+                            </ListItem>
+                            <Divider />
+                            <Divider />
+                        </div>
+                    )
+                }
+
+                <ListItem onClick={handleClickeventMore} button key='Thêm'>
+                <ListItemIcon><MoreVertIcon/></ListItemIcon>
+                    <ListItemText primary='Thêm' />
+                </ListItem>
+                {
+                    eventMore && (
+                        <div>
+                            <ListItem button key='Options 1'>
+                                <ListItemIcon></ListItemIcon>
+                            <ListItemText primary='Options 1' />
+                            </ListItem>
+                            <ListItem button key='Options 2'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 2' />
+                            </ListItem>
+                            <ListItem button key='Options 3'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 3' />
+                            </ListItem>
+                            <Divider />
+                            <Divider />
+                        </div>
+                    )
+                }
             </List>
             <Divider />
             <List>
-                <ListItem button key='Cài đặt' >
-                <ListItemText primary='Cài đặt' onClick={handleClick}/>
+                <ListItem onClick={handleClickeventSetting} button key='Cài đặt' >
+                <ListItemText primary='Cài đặt'/>
                 </ListItem>
-                <ListItem button key='Công cụ'>
-                <ListItemText primary='Công cụ' onClick={handleClickHiddenTools}/>
+
+                {
+                    eventSetting && (
+                        <div>
+                            <ListItem button key='Options 1'>
+                                <ListItemIcon></ListItemIcon>
+                            <ListItemText primary='Options 1' />
+                            </ListItem>
+                            <ListItem button key='Options 2'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 2' />
+                            </ListItem>
+                            <ListItem button key='Options 3'>
+                                <ListItemIcon></ListItemIcon>
+                                <ListItemText primary='Options 3' />
+                            </ListItem>
+                            <Divider />
+                            <Divider />
+                        </div>
+                    )
+                }
+
+                <ListItem  onClick={handleClickHiddenTools} button key='Công cụ'>
+                <ListItemText primary='Công cụ'/>
             </ListItem>
             </List>
         </div>
     );
 
     // end
-    const { width } = props;
-    const classes = useStyles();
-    const widthMobile = components[width] || 10;
 
   return (
       <div>
+
         {/* mobile state: appbar top ( drawer + brand + avatar ) */}
         <Grid container className={classes.mobileAppbarTop}>
             {/* drawer */}
             <Grid item xs={4}>
             <div className={classes.buttonMobile}>
                 <React.Fragment key={'left'}>
-                <Button onClick={toggleDrawer('left', true)}>
+                <Button onClick={handleClickOpenDrawer}>
                     <MenuIcon></MenuIcon>
                 </Button>
                 <SwipeableDrawer
                     anchor={'left'}
-                    open={state['left']}
-                    onClose={toggleDrawer('left', false)}
-                    onOpen={toggleDrawer('left', true)}
+                    open={openState}
+                    onClose={handleClickOpenDrawer}
+                    onOpen={handleClickOpenDrawer}
                 >
                     {list('left')}
                 </SwipeableDrawer>
@@ -226,7 +374,7 @@ function SearchWithWidth(props) {
         <Grid className={classes.appbarTopMobileBreakpoint} container direction="row" alignItems="center">
             {/* search */}
             <Grid item xs={12}>
-            <AppBar color="transparent" position="static" classes={{root: classes.rootAppBar}}>
+            <AppBar color="transparent" position="static" classes={{root: classes.rootAppBarMobile}}>
                 <Toolbar>
                 <InputBase
                     placeholder="Search…"
@@ -252,8 +400,8 @@ function SearchWithWidth(props) {
         </Grid>
 
         {/* tools events */}
-        <Grid container className={classes.rootContainer}>
-            <Toolbar variant="regular" className={classes.toolsEvent}>
+        <Grid container direction="column" className={classes.rootContainer}>
+            {/* <Toolbar variant="regular" className={classes.toolsEvent}> */}
             <div className={classes.toolbarDestop}>
             <Link onClick={handleClick} href="#" className={classes.toolbarLink}><SearchIcon></SearchIcon>Tất cả</Link>
             <Link onClick={handleClick} href="#" className={classes.toolbarLink}><ImageIcon ></ImageIcon>Hình ảnh</Link>
@@ -282,27 +430,31 @@ function SearchWithWidth(props) {
                 </StyledMenuItem>
             </StyledMenu>
 
-            </Toolbar>
+            {/* </Toolbar> */}
             <Grid item xs={8}>
             <Divider light />
             </Grid>
             {/* tool */}
-            {hiddenTools &&
-            (<Grid>
-                <Toolbar>
-                <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi ngôn ngữ
-                        <ArrowDropDownIcon></ArrowDropDownIcon>
-                </Link>
-                <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi lúc
-                <ArrowDropDownIcon></ArrowDropDownIcon>
-                </Link>
-                <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Tất cả kết quả
-                <ArrowDropDownIcon></ArrowDropDownIcon>
-                </Link>
-                </Toolbar>
-            </Grid>)
-            }
         </Grid>
+
+
+        <Grid container direction="column" className={classes.rootContainer}>
+            {hiddenTools &&
+            (
+                    <Grid item xs={widthMobile} className={classes.searchResult}>
+                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi ngôn ngữ
+                                <ArrowDropDownIcon></ArrowDropDownIcon>
+                        </Link>
+                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi lúc
+                        <ArrowDropDownIcon></ArrowDropDownIcon>
+                        </Link>
+                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Tất cả kết quả
+                        <ArrowDropDownIcon></ArrowDropDownIcon>
+                        </Link>
+                    </Grid>
+            )
+            }
+      </Grid>
       </div>
   );
 }

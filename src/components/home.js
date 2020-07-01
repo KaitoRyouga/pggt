@@ -6,6 +6,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import useStyles from './style'
 import Search from './mobile/search'
 import Content from './mobile/content'
+import Divider from '@material-ui/core/Divider';
 
 
 export default function AlignItemsList() {
@@ -29,6 +30,11 @@ export default function AlignItemsList() {
       <Search/>
       
       {/* content */}
+      <div className={classes.fixMobile}>
+        <br />
+        <br />
+        <br />
+      </div>
         <Content></Content>
         {/* pagination */}
       <div className={classes.pagination}>
