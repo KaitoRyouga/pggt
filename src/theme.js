@@ -22,7 +22,7 @@ const theme = createMuiTheme({
       protectedTitle: pink['400'],
       type: 'light'
     },
-    shadows: ["none"]
+    // shadows: ["none"]
   })
 
   export default theme
