@@ -30,11 +30,6 @@ export default function AlignItemsList() {
       <Search/>
       
       {/* content */}
-      <div className={classes.fixMobile}>
-        <br />
-        <br />
-        <br />
-      </div>
         <Content></Content>
         {/* pagination */}
       <div className={classes.pagination}>

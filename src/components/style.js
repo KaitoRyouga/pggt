@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
       height: '100%',
       marginBottom: '0.7em',
       [theme.breakpoints.up('xs')]: {
-        // marginBottom: '0.1em',
+        // marginTop: '20em',
       },
     },
     inputInput: {
@@ -204,7 +204,7 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('xs')]: {
         paddingLeft: '3%',
         paddingRight: '0',
-        marginTop: '-1.5em'
+        marginTop: '-0.3em'
       },
       [theme.breakpoints.down('sm')]: {
         paddingLeft: '6%',
@@ -241,8 +241,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     searchResult: {
-      paddingBottom: '1.5em',
-      // marginTop: '2em',
+      paddingBottom: '1em',
+      // paddingTop: '-1.5em',
+      marginTop: '-0.5em',
     },
     logo: {
         [theme.breakpoints.down('xs')]: {
@@ -351,7 +352,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fixMobile: {
     [theme.breakpoints.down('xs')]: {
-      // display: 'none'
+      display: 'none'
     },
     [theme.breakpoints.up('sm')]: {
       display: 'none'
