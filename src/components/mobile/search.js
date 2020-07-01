@@ -27,7 +27,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { withStyles } from '@material-ui/core/styles';
 
-
 const components = {
   sm: 8,
   md: 8,
@@ -35,6 +34,8 @@ const components = {
   xl: 10,
   xs: 10,
 };
+
+// menu appears when clicked
 
 const StyledMenu = withStyles({
     paper: {
@@ -67,8 +68,13 @@ const StyledMenu = withStyles({
     },
   }))(MenuItem);
 
+// end
+
+// function search change in proportion
+
 function SearchWithWidth(props) {
 
+    // set width scrceen
     const { width } = props;
     const classes = useStyles();
     const widthMobile = components[width] || 10;
@@ -79,6 +85,8 @@ function SearchWithWidth(props) {
     const [eventVideo, seteventVideo] = React.useState(false);
     const [eventMore, seteventMore] = React.useState(false);
     const [eventSetting, seteventSetting] = React.useState(false);
+
+    // set open/off drawer
     const [openState, setopenState] = React.useState(false);
 
     const handleClickOpenDrawer = () => {
@@ -151,7 +159,6 @@ function SearchWithWidth(props) {
             [classes.fullList]: anchor === 'top' || anchor === 'bottom',
             })}
             role="presentation"
-            // onClick={toggleDrawer(anchor, false)}
             onKeyDown={handleClickOpenDrawer}
         >
             <List>
@@ -440,19 +447,19 @@ function SearchWithWidth(props) {
 
         <Grid container direction="column" className={classes.rootContainer}>
             {hiddenTools &&
-            (
-                    <Grid item xs={widthMobile} className={classes.searchResult}>
-                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi ngôn ngữ
-                                <ArrowDropDownIcon></ArrowDropDownIcon>
-                        </Link>
-                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi lúc
-                        <ArrowDropDownIcon></ArrowDropDownIcon>
-                        </Link>
-                        <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Tất cả kết quả
-                        <ArrowDropDownIcon></ArrowDropDownIcon>
-                        </Link>
-                    </Grid>
-            )
+                (
+                <Grid item xs={widthMobile} className={classes.searchResult}>
+                    <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi ngôn ngữ
+                            <ArrowDropDownIcon></ArrowDropDownIcon>
+                    </Link>
+                    <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Mọi lúc
+                    <ArrowDropDownIcon></ArrowDropDownIcon>
+                    </Link>
+                    <Link onClick={handleClick} href="#" className={classes.toolbarLink}>Tất cả kết quả
+                    <ArrowDropDownIcon></ArrowDropDownIcon>
+                    </Link>
+                </Grid>
+                )
             }
       </Grid>
       </div>
