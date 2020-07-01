@@ -324,7 +324,7 @@ function SearchWithWidth(props) {
                 </Link>
             </Grid>
             {/* avatar */}
-            <Grid item xs={3} className={classes.avatarTopMbile}>
+            <Grid item xs={4} className={classes.avatarTopMobile}>
                 <Avatar onClick={handleClick} alt="KR"/>
             </Grid>
         </Grid>

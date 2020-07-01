@@ -170,6 +170,7 @@ const useStyles = makeStyles((theme) => ({
     },
     rootAppBar: {
         borderRadius: '0.7em',
+        border: '1px solid #cdc5ba',
         width: '100%',
         height: '3em',
         marginLeft: '0.5em',
@@ -191,6 +192,7 @@ const useStyles = makeStyles((theme) => ({
     },
     rootAppBarMobile: {
       borderRadius: '0.7em',
+      border: '1px solid #cdc5ba',
       width: '100%',
       height: '2.5em',
       marginLeft: '0.5em',
@@ -261,7 +263,7 @@ const useStyles = makeStyles((theme) => ({
     buttonMobile: {
         [theme.breakpoints.down('xs')]: {
           // display: 'none'
-          marginLeft: '1em'
+          // marginLeft: '1em'
         },
         [theme.breakpoints.up('sm')]: {
           display: 'none'
@@ -299,7 +301,7 @@ const useStyles = makeStyles((theme) => ({
     avatarTopMobile: {
       display:  'flex', 
       justifyContent: 'flex-end',
-      marginLeft: '4em',
+      // marginLeft: '4em',
       [theme.breakpoints.down('xs')]: {
         // display: 'none'
       },
@@ -312,8 +314,10 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileAppbarTop: {
       marginTop: '1em',
+      
       [theme.breakpoints.down('xs')]: {
         // display: 'none'
+        // marginLeft: '-0.7em',
       },
       [theme.breakpoints.up('sm')]: {
         display: 'none'
@@ -330,7 +334,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
-      marginRight: '0.1em'
+      marginLeft: '1em',
+      // marginRight: '0.1em'
     },
     
     box: {
