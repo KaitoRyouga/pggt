@@ -60,10 +60,10 @@ const StyledMenu = withStyles({
   const StyledMenuItem = withStyles((theme) => ({
     root: {
       '&:focus': {
-        backgroundColor: theme.palette.primary.main,
-        '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-          color: theme.palette.common.white,
-        },
+        // backgroundColor: theme.palette.primary.main,
+        // '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+        //   color: theme.palette.common.white,
+        // },
       },
     },
   }))(MenuItem);
@@ -427,18 +427,24 @@ function SearchWithWidth(props) {
                 onClose={handleClose}
             >
                 <StyledMenuItem>
+                {/* <ListItemIcon><SearchIcon /></ListItemIcon> */}
+                <SearchIcon />
                 <ListItemText onClick={handleClose} primary="Option 1" />
                 </StyledMenuItem>
                 <StyledMenuItem>
+                {/* <ListItemIcon><SearchIcon /></ListItemIcon> */}
+                <SearchIcon />
                 <ListItemText onClick={handleClose} primary="Option 2" />
                 </StyledMenuItem>
                 <StyledMenuItem>
+                {/* <ListItemIcon><SearchIcon /></ListItemIcon> */}
+                <SearchIcon />
                 <ListItemText onClick={handleClose} primary="Option 3" />
                 </StyledMenuItem>
             </StyledMenu>
 
             {/* </Toolbar> */}
-            <Grid item xs={8}>
+            <Grid item xs={8} className={classes.Divider}>
             <Divider light />
             </Grid>
             {/* tool */}

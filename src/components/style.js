@@ -306,6 +306,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('lg')]: {
           display: 'none'
         },
+    },
+    Divider: {
+      marginBottom: '0.5em'
     }
   
   }));

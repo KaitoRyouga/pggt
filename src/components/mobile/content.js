@@ -39,7 +39,7 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={8} className={classes.Divider}>
           <Divider light />
         </Grid>
         <Grid item xs={widthMobile} className={classes.searchResult}>
@@ -57,7 +57,7 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={8} className={classes.Divider}>
           <Divider light />
         </Grid>
         <Grid item xs={widthMobile} className={classes.searchResult}>
@@ -75,7 +75,7 @@ function ContentWithWidth(props) {
             >You've visited this page 2 times. Last visit: 6/28/20</span
           >
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={8} className={classes.Divider}>
           <Divider light />
         </Grid>
         <Grid item xs={12} className={classes.searchRelated}>
